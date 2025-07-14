@@ -1,0 +1,236 @@
+.contact {
+  background-color: var(--surface);
+}
+
+.contact-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-info h3 {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-info p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.contact-method {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(46, 90, 135, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-method:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color);
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  color: white;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact-method:hover .contact-icon {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(46, 90, 135, 0.3);
+}
+
+.contact-method-clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.contact-method-clickable:hover {
+  background: linear-gradient(135deg, rgba(46, 90, 135, 0.05), rgba(91, 155, 213, 0.05));
+}
+
+.contact-method-clickable:active {
+  transform: translateY(-3px) scale(0.98);
+}
+
+.contact-clickable {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.contact-clickable:hover {
+  color: var(--primary-color) !important;
+}
+
+.contact-details {
+  text-align: center;
+}
+
+.contact-details h4 {
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.contact-details p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 1rem;
+}
+
+.contact-details a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.contact-details a:hover {
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+
+
+@media (min-width: 1200px) {
+  .contact-methods {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1000px;
+    margin: 0 auto 3rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-methods {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .contact-method {
+    padding: 1.5rem;
+  }
+  
+  .contact-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .contact-details h4 {
+    font-size: 1.2rem;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-method {
+    padding: 1.25rem;
+  }
+  
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .contact-details h4 {
+    font-size: 1.1rem;
+  }
+  
+  .contact-details p,
+  .contact-details a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Notification Popup */
+.notification {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  z-index: 1000;
+  animation: slideInUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+             fadeOut 0.3s ease-in 2.7s forwards;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100px) translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .notification {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    font-size: 0.85rem;
+    padding: 0.875rem 1.25rem;
+  }
+} 

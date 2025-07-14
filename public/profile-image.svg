@@ -1,0 +1,5 @@
+<!-- Esta será reemplazada por la imagen real del usuario -->
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="transparent"/>
+  <text x="150" y="150" text-anchor="middle" dominant-baseline="middle" font-size="48" fill="#2E5A87">Profile Image</text>
+</svg> 
